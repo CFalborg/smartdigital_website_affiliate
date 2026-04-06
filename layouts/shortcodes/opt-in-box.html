@@ -1,0 +1,19 @@
+{{- $headline := .Get "headline" | default "Få min gratis guide: Mine 10 favorit AI-tools" -}}
+{{- $subtext := .Get "subtext" | default "Tilmeld dig nyhedsbrevet og få guiden direkte i din indbakke." -}}
+{{- $formId := .Get "formId" | default "" -}}
+{{- $btnText := .Get "btnText" | default "Ja tak, send mig guiden!" -}}
+<div class="opt-in-box">
+  <div class="opt-in-box__content">
+    <p class="opt-in-box__headline">🎁 {{ $headline }}</p>
+    <p class="opt-in-box__subtext">{{ $subtext }}</p>
+    {{- if and site.Params.klaviyoPublicKey (ne site.Params.klaviyoPublicKey "KLAVIYO_PUBLIC_KEY") }}
+      {{- if $formId }}
+    <div class="klaviyo-form-{{ $formId }}"></div>
+      {{- else }}
+    <a href="/nyhedsbrev/" class="affiliate-btn">{{ $btnText }}</a>
+      {{- end }}
+    {{- else }}
+    <a href="/nyhedsbrev/" class="affiliate-btn">{{ $btnText }}</a>
+    {{- end }}
+  </div>
+</div>

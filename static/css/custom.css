@@ -1,0 +1,237 @@
+/* ============================================
+   SmartDigital – Custom CSS
+   Extends PaperMod theme
+   ============================================ */
+
+/* --- Affiliate Button --- */
+.affiliate-btn {
+  display: inline-block;
+  background-color: #e85d04;
+  color: #fff !important;
+  padding: 0.65em 1.4em;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none !important;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin: 0.5em 0;
+}
+
+.affiliate-btn:hover {
+  background-color: #c44b00;
+  transform: translateY(-1px);
+}
+
+/* --- Affiliate Link Wrapper --- */
+.affiliate-link-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  margin: 1.25em 0;
+  flex-wrap: wrap;
+}
+
+.affiliate-badge {
+  font-size: 0.72rem;
+  color: #888;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  white-space: nowrap;
+}
+
+/* --- Affiliate Disclosure Banner --- */
+.affiliate-disclosure {
+  background-color: #fff8e6;
+  border-left: 4px solid #f5a623;
+  padding: 0.75em 1em;
+  margin: 1.5em 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.affiliate-disclosure p {
+  margin: 0;
+}
+
+/* Dark mode */
+.dark .affiliate-disclosure {
+  background-color: #2a2200;
+  color: #ccc;
+  border-left-color: #c87d00;
+}
+
+/* --- Rating Box --- */
+.rating-box {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.25em 1.5em;
+  margin: 1.5em 0;
+  background: #fafafa;
+}
+
+.dark .rating-box {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+.rating-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.rating-box__product {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.rating-box__score {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #e85d04;
+}
+
+.rating-box__stars {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.6em;
+}
+
+.star--full { color: #f5a623; }
+.star--half { color: #f5a623; opacity: 0.7; }
+.star--empty { color: #ccc; }
+
+.rating-box__verdict {
+  font-style: italic;
+  color: #555;
+  margin: 0.5em 0 0.75em;
+}
+
+.dark .rating-box__verdict { color: #aaa; }
+
+/* --- Pro/Con Table --- */
+.pro-con {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+@media (max-width: 600px) {
+  .pro-con { grid-template-columns: 1fr; }
+}
+
+.pro-con__col {
+  border-radius: 8px;
+  padding: 1em 1.25em;
+}
+
+.pro-con__col--pros {
+  background: #f0faf0;
+  border-left: 4px solid #2e7d32;
+}
+
+.pro-con__col--cons {
+  background: #fff3f3;
+  border-left: 4px solid #c62828;
+}
+
+.dark .pro-con__col--pros {
+  background: #0d2010;
+  border-left-color: #4caf50;
+}
+
+.dark .pro-con__col--cons {
+  background: #200d0d;
+  border-left-color: #ef5350;
+}
+
+.pro-con__heading {
+  margin: 0 0 0.5em;
+  font-size: 1rem;
+}
+
+.pro-con__list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.pro-con__list li {
+  margin-bottom: 0.3em;
+  font-size: 0.93rem;
+}
+
+/* --- Opt-in Box --- */
+.opt-in-box {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.75em 2em;
+  margin: 2em 0;
+  text-align: center;
+}
+
+.opt-in-box__headline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.4em;
+}
+
+.opt-in-box__subtext {
+  font-size: 0.92rem;
+  opacity: 0.85;
+  margin: 0 0 1em;
+}
+
+/* --- FAQ Block --- */
+.faq-block {
+  margin: 2em 0;
+}
+
+.faq-block__title {
+  font-size: 1.4rem;
+  margin-bottom: 0.75em;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dark .faq-item {
+  border-bottom-color: #333;
+}
+
+.faq-item__question {
+  cursor: pointer;
+  padding: 0.85em 0;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item__question::after {
+  content: "+";
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #888;
+  transition: transform 0.2s;
+}
+
+details[open] .faq-item__question::after {
+  transform: rotate(45deg);
+}
+
+.faq-item__answer {
+  padding: 0 0 1em 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dark .faq-item__answer { color: #aaa; }

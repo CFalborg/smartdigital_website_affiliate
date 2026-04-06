@@ -1,0 +1,26 @@
+[build]
+  publish = "public"
+  command = "hugo --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.147.0"
+  HUGO_ENV = "production"
+
+# Affiliate redirect-links via /go/produkt-navn
+# Tilføj en linje per produkt du linker til via PartnerStack
+# Eksempel:
+# [[redirects]]
+#   from = "/go/notion"
+#   to = "https://app.partnerstack.com/application/notion?referral=DITREFERRALID"
+#   status = 302
+#
+# [[redirects]]
+#   from = "/go/chatgpt"
+#   to = "https://app.partnerstack.com/application/openai?referral=DITREFERRALID"
+#   status = 302
+
+# 404 side
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

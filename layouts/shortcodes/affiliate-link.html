@@ -1,0 +1,9 @@
+{{- $url := .Get "url" -}}
+{{- $text := .Get "text" | default "Se pris og køb her" -}}
+{{- $class := .Get "class" | default "affiliate-btn" -}}
+<div class="affiliate-link-wrap">
+  <a href="{{ $url }}" rel="nofollow sponsored" target="_blank" class="{{ $class }}">
+    {{ $text }} →
+  </a>
+  <span class="affiliate-badge">Affiliate-link</span>
+</div>

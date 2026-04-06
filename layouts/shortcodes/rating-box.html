@@ -1,0 +1,47 @@
+{{- $product := .Get "product" | default "Produkt" -}}
+{{- $score := .Get "score" | default "4.0" -}}
+{{- $scoreFloat := float $score -}}
+{{- $verdict := .Get "verdict" | default "" -}}
+{{- $url := .Get "url" | default "" -}}
+{{- $urlText := .Get "urlText" | default "Se pris og køb her" -}}
+{{- $fullStars := int $scoreFloat -}}
+{{- $hasHalf := gt (sub $scoreFloat (float $fullStars)) 0.4 -}}
+{{- $emptyStars := sub 5 $fullStars -}}
+{{- if $hasHalf }}{{- $emptyStars = sub $emptyStars 1 }}{{- end -}}
+<div class="rating-box">
+  <div class="rating-box__header">
+    <span class="rating-box__product">{{ $product }}</span>
+    <span class="rating-box__score">{{ $score }}/5</span>
+  </div>
+  <div class="rating-box__stars" aria-label="Karakter: {{ $score }} ud af 5">
+    {{- if gt $fullStars 0 }}{{- range seq 1 $fullStars }}<span class="star star--full">★</span>{{- end }}{{- end -}}
+    {{- if $hasHalf }}<span class="star star--half">★</span>{{- end -}}
+    {{- if gt $emptyStars 0 }}{{- range seq 1 $emptyStars }}<span class="star star--empty">☆</span>{{- end }}{{- end }}
+  </div>
+  {{- if $verdict }}
+  <p class="rating-box__verdict">{{ $verdict }}</p>
+  {{- end }}
+  {{- if $url }}
+  <a href="{{ $url }}" rel="nofollow sponsored" target="_blank" class="affiliate-btn">{{ $urlText }} →</a>
+  {{- end }}
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": {{ $product | jsonify }}
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ $score }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SmartDigital"
+  }
+}
+</script>

@@ -1,0 +1,28 @@
+{{- $pros := .Get "pros" | default "" -}}
+{{- $cons := .Get "cons" | default "" -}}
+{{- $prosList := split $pros "|" -}}
+{{- $consList := split $cons "|" -}}
+<div class="pro-con">
+  <div class="pro-con__col pro-con__col--pros">
+    <h4 class="pro-con__heading pro-con__heading--pros">✅ Fordele</h4>
+    <ul class="pro-con__list">
+      {{- range $prosList }}
+      {{- $item := trim . " " }}
+      {{- if gt (len $item) 0 }}
+      <li>{{ $item }}</li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+  <div class="pro-con__col pro-con__col--cons">
+    <h4 class="pro-con__heading pro-con__heading--cons">❌ Ulemper</h4>
+    <ul class="pro-con__list">
+      {{- range $consList }}
+      {{- $item := trim . " " }}
+      {{- if gt (len $item) 0 }}
+      <li>{{ $item }}</li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+</div>

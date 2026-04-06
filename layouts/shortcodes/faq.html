@@ -1,0 +1,54 @@
+{{/*
+  Usage:
+  {{< faq >}}
+  ### Question one?
+  Answer one.
+  ### Question two?
+  Answer two.
+  {{< /faq >}}
+*/}}
+{{- $content := .Inner | markdownify -}}
+{{- $sections := split $content "<h3>" -}}
+{{- $pairs := slice -}}
+{{- range $sections -}}
+  {{- $s := trim . " \n\r" -}}
+  {{- if gt (len $s) 0 -}}
+    {{- $parts := split $s "</h3>" -}}
+    {{- if ge (len $parts) 2 -}}
+      {{- $q := index $parts 0 | plainify | trim " \n\r" -}}
+      {{- $a := index $parts 1 | trim " \n\r" -}}
+      {{- if and (gt (len $q) 0) (gt (len $a) 0) -}}
+        {{- $pairs = $pairs | append (dict "q" $q "a" $a) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $pairs) 0 }}
+<div class="faq-block">
+  <h2 class="faq-block__title">Ofte stillede spørgsmål</h2>
+  {{- range $pairs }}
+  <details class="faq-item">
+    <summary class="faq-item__question">{{ .q }}</summary>
+    <div class="faq-item__answer">{{ .a | safeHTML }}</div>
+  </details>
+  {{- end }}
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{- range $i, $pair := $pairs }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $pair.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $pair.a | plainify | jsonify }}
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}

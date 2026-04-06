@@ -1,0 +1,94 @@
+baseURL = "https://smartdigital.dk/"
+languageCode = "da"
+title = "SmartDigital"
+theme = "PaperMod"
+defaultContentLanguage = "da"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+
+[params]
+  description = "Uafhængige anmeldelser, guides og anbefalinger inden for AI, produktivitet, biohacking og tech"
+  author = "SmartDigital"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  # Klaviyo – erstat med din rigtige Public API Key fra Klaviyo dashboard
+  klaviyoPublicKey = "KLAVIYO_PUBLIC_KEY"
+
+  # Affiliate disclosure (vises øverst på affiliate-artikler)
+  affiliateDisclosure = "Denne side indeholder affiliate-links. Jeg modtager evt. en kommission, hvis du køber via mine links – uden ekstra omkostninger for dig."
+
+[params.homeInfoParams]
+  Title = "Smarte valg inden for tech, AI og produktivitet"
+  Content = "Uafhængige anmeldelser og guides til dig, der vil bruge de bedste digitale tools – og spare tid og penge undervejs."
+
+[[params.socialIcons]]
+  name = "facebook"
+  url = "https://facebook.com/smartdigitaldk"
+
+[[params.socialIcons]]
+  name = "instagram"
+  url = "https://instagram.com/smartdigitaldk"
+
+[[params.socialIcons]]
+  name = "rss"
+  url = "/index.xml"
+
+[params.label]
+  text = "SmartDigital"
+
+[menu]
+  [[menu.main]]
+    name = "AI & Tools"
+    url = "/ai-tools/"
+    weight = 1
+  [[menu.main]]
+    name = "Produktivitet"
+    url = "/produktivitet/"
+    weight = 2
+  [[menu.main]]
+    name = "Biohacking"
+    url = "/biohacking/"
+    weight = 3
+  [[menu.main]]
+    name = "Livsstil & Tech"
+    url = "/livsstil-tech/"
+    weight = 4
+  [[menu.main]]
+    name = "Om mig"
+    url = "/om-mig/"
+    weight = 5
+  [[menu.main]]
+    name = "Nyhedsbrev"
+    url = "/nyhedsbrev/"
+    weight = 6
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  type = "types"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[minify]
+  disableXML = true
+  minifyOutput = true

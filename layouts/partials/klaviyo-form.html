@@ -1,0 +1,6 @@
+{{- $formId := .formId | default "" -}}
+{{- if and site.Params.klaviyoPublicKey (ne site.Params.klaviyoPublicKey "KLAVIYO_PUBLIC_KEY") }}
+{{- if $formId }}
+<div class="klaviyo-form-{{ $formId }}"></div>
+{{- end }}
+{{- end }}
