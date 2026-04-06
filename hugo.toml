@@ -13,6 +13,7 @@ buildFuture = false
   logo_small = "img/logo-small.png"
   description = "Uafhængige anmeldelser og guides inden for AI, produktivitet, biohacking og tech"
   author = "SmartDigital"
+  date_format = "2. January 2006"
   copyright = '<p>© 2026 SmartDigital. Alle rettigheder forbeholdes.</p>'
 
   # Klaviyo – erstat med din rigtige Public API Key fra Klaviyo dashboard
