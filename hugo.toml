@@ -1,26 +1,20 @@
 baseURL = "https://smartdigital.dk/"
-languageCode = "da"
 title = "SmartDigital"
 theme = "hugo-universal-theme"
-defaultContentLanguage = "da"
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 
+defaultContentLanguage = "da"
+defaultContentLanguageInSubdir = true
+
+# ── Shared params ──────────────────────────────────────────
 [params]
   style = "default"
   logo = "img/logo.png"
   logo_small = "img/logo-small.png"
-  description = "Uafhængige anmeldelser og guides inden for AI, produktivitet, biohacking og tech"
   author = "SmartDigital"
-  date_format = "2. January 2006"
-  copyright = '<p>© 2026 SmartDigital. Alle rettigheder forbeholdes.</p>'
-
-  # Klaviyo – erstat med din rigtige Public API Key fra Klaviyo dashboard
   klaviyoPublicKey = "KLAVIYO_PUBLIC_KEY"
-
-  # Affiliate disclosure (vises øverst på affiliate-artikler)
-  affiliateDisclosure = "Denne side indeholder affiliate-links. Jeg modtager evt. en kommission, hvis du køber via mine links – uden ekstra omkostninger for dig."
 
   [params.topbar]
     enable = false
@@ -42,19 +36,8 @@ buildFuture = false
   [params.clients]
     enable = false
 
-  [params.recent_posts]
-    enable = true
-    title = "Seneste artikler"
-    subtitle = "Guides, anmeldelser og toplister"
-    hide_summary = false
-
   [params.footer.recent_posts]
     enable = true
-
-  [params.footer.about_us]
-    enable = true
-    title = "SmartDigital"
-    subtitle = "Uafhængige anmeldelser og guides til smarte digitale valg inden for AI, produktivitet og biohacking."
 
   [params.footer.contact]
     enable = false
@@ -64,36 +47,108 @@ buildFuture = false
     tags = true
     search = false
 
-[menu]
-  [[menu.main]]
+# ── Danish ──────────────────────────────────────────────────
+[languages.da]
+  languageCode = "da"
+  languageName = "Dansk"
+  weight = 1
+  contentDir = "content/da"
+
+  [languages.da.params]
+    description = "Uafhængige anmeldelser og guides inden for AI, produktivitet, biohacking og tech"
+    date_format = "2. January 2006"
+    copyright = '<p>© 2026 SmartDigital. Alle rettigheder forbeholdes.</p>'
+    affiliateDisclosure = "Denne side indeholder affiliate-links. Jeg modtager evt. en kommission, hvis du køber via mine links – uden ekstra omkostninger for dig."
+
+    [languages.da.params.recent_posts]
+      enable = true
+      title = "Seneste artikler"
+      subtitle = "Guides, anmeldelser og toplister"
+      hide_summary = false
+
+    [languages.da.params.footer.about_us]
+      enable = true
+      title = "SmartDigital"
+      subtitle = "Uafhængige anmeldelser og guides til smarte digitale valg inden for AI, produktivitet og biohacking."
+
+  [[languages.da.menu.main]]
     name = "AI & Tools"
-    url = "/ai-tools/"
+    url = "/da/ai-tools/"
     weight = 1
-  [[menu.main]]
+  [[languages.da.menu.main]]
     name = "Produktivitet"
-    url = "/produktivitet/"
+    url = "/da/produktivitet/"
     weight = 2
-  [[menu.main]]
+  [[languages.da.menu.main]]
     name = "Biohacking"
-    url = "/biohacking/"
+    url = "/da/biohacking/"
     weight = 3
-  [[menu.main]]
+  [[languages.da.menu.main]]
     name = "Livsstil & Tech"
-    url = "/livsstil-tech/"
+    url = "/da/livsstil-tech/"
     weight = 4
-  [[menu.main]]
+  [[languages.da.menu.main]]
     name = "Om mig"
-    url = "/om-mig/"
+    url = "/da/om-mig/"
     weight = 5
-  [[menu.main]]
+  [[languages.da.menu.main]]
     name = "Nyhedsbrev"
-    url = "/nyhedsbrev/"
+    url = "/da/nyhedsbrev/"
     weight = 6
 
+# ── English ─────────────────────────────────────────────────
+[languages.en]
+  languageCode = "en"
+  languageName = "English"
+  weight = 2
+  contentDir = "content/en"
+
+  [languages.en.params]
+    description = "Independent reviews and guides for AI, productivity, biohacking and tech"
+    date_format = "January 2, 2006"
+    copyright = '<p>© 2026 SmartDigital. All rights reserved.</p>'
+    affiliateDisclosure = "This page contains affiliate links. I may earn a commission if you purchase via my links – at no extra cost to you."
+
+    [languages.en.params.recent_posts]
+      enable = true
+      title = "Latest articles"
+      subtitle = "Guides, reviews and top lists"
+      hide_summary = false
+
+    [languages.en.params.footer.about_us]
+      enable = true
+      title = "SmartDigital"
+      subtitle = "Independent reviews and guides for smart digital choices in AI, productivity and biohacking."
+
+  [[languages.en.menu.main]]
+    name = "AI & Tools"
+    url = "/en/ai-tools/"
+    weight = 1
+  [[languages.en.menu.main]]
+    name = "Productivity"
+    url = "/en/productivity/"
+    weight = 2
+  [[languages.en.menu.main]]
+    name = "Biohacking"
+    url = "/en/biohacking/"
+    weight = 3
+  [[languages.en.menu.main]]
+    name = "Lifestyle & Tech"
+    url = "/en/lifestyle-tech/"
+    weight = 4
+  [[languages.en.menu.main]]
+    name = "About"
+    url = "/en/about/"
+    weight = 5
+  [[languages.en.menu.main]]
+    name = "Newsletter"
+    url = "/en/newsletter/"
+    weight = 6
+
+# ── Taxonomies & outputs ────────────────────────────────────
 [taxonomies]
   tag = "tags"
   category = "categories"
-  type = "types"
 
 [outputs]
   home = ["HTML", "RSS"]

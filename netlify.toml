@@ -19,8 +19,20 @@
 #   to = "https://app.partnerstack.com/application/openai?referral=DITREFERRALID"
 #   status = 302
 
-# 404 side
+# Language auto-detect on root – English browsers → /en/, everyone else → /da/
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  conditions = {Language = ["en", "en-US", "en-GB", "en-AU", "en-CA", "en-NZ"]}
+
+[[redirects]]
+  from = "/"
+  to = "/da/"
+  status = 302
+
+# 404
 [[redirects]]
   from = "/*"
-  to = "/404.html"
+  to = "/da/404.html"
   status = 404
