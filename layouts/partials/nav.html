@@ -50,7 +50,7 @@
                     <ul class="dropdown-menu">
                       {{ $page := . }}
                       {{ range .Site.Languages }}
-                        {{- $link := .BaseURL -}}
+                        {{- $link := printf "/%s/" .Lang -}}
                         {{- range $page.Translations -}}
                           {{- if eq .Language.Lang $.Lang -}}{{- $link = .Permalink -}}{{- end -}}
                         {{- end -}}
