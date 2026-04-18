@@ -5,7 +5,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 
-defaultContentLanguage = "da"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
 # ── Shared params ──────────────────────────────────────────
@@ -51,7 +51,7 @@ defaultContentLanguageInSubdir = true
 [languages.da]
   languageCode = "da"
   languageName = "Dansk"
-  weight = 1
+  weight = 2
   contentDir = "content/da"
 
   [languages.da.params]
@@ -100,7 +100,7 @@ defaultContentLanguageInSubdir = true
 [languages.en]
   languageCode = "en"
   languageName = "English"
-  weight = 2
+  weight = 1
   contentDir = "content/en"
 
   [languages.en.params]
